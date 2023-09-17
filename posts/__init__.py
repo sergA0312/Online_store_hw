@@ -1,0 +1,2 @@
+def thumbnail():
+    return None
