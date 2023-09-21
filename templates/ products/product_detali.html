@@ -1,0 +1,13 @@
+<!-- product_detail.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>{{ product.name }}</h1>
+  <p>Categories:</p>
+  <ul>
+    {% for category in product.categories.all %}
+      <li>{{ category.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

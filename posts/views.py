@@ -13,3 +13,14 @@ def products_view(request):
         'products': product
     }
     return render(request, 'products/products.html', context=context_data)
+
+
+
+# views.py
+
+from django.shortcuts import render
+from .models import Category
+
+def category_list(request):
+    categories = Category.objects.all()
+    return render(request, 'categories.html', {'categories': categories})
