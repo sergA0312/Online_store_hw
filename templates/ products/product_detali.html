@@ -11,3 +11,34 @@
     {% endfor %}
   </ul>
 {% endblock %}
+<!-- detail.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Детальная информация о продукте</title>
+</head>
+<body>
+    <h2>{{ product.name }}</h2>
+    <p>{{ product.description }}</p>
+
+    <!-- Проверяем, есть ли категории продукта и отображаем их -->
+    {% if product.categories.all %}
+        <h3>Категории продукта:
+        <h3>oversized</h3>
+        <h3>t-shirts</h3>
+        <h3>sneakers</h3>
+        <ul>
+            {% for category in product.categories.all %}
+                <li>
+                    <!-- Проверяем, есть ли у категории иконка -->
+                    {% if category.icon %}
+                        <img src="{{ category.icon.url }}" alt="{{ category.name }} Icon">
+                    {% endif %}
+                    {{ category.name }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
