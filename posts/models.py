@@ -7,7 +7,7 @@ from posts import thumbnail
 
 
 class OnlineStore(models.Model):
-    image = thumbnail.ImageField(upload_to='store_image', blank=True, null=True)
+    image = models.ImageField(upload_to='store_image', blank=True, null=True)
     title = models.CharField(max_length=50)
     description = models.TextField(null=True)
     parameters = models.TextField(null=True)
